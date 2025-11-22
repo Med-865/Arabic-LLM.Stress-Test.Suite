@@ -1,109 +1,180 @@
-# Arabic-LLM.Stress-Test.Suite
-Comprehensive Stress-Test Suite for Arabic Large Language Models (LLMs)
-# Arabic LLM Stress-Test Suite (ALSTS)  
-A comprehensive evaluation suite designed to benchmark the performance, reasoning depth, cultural understanding, and linguistic accuracy of Large Language Models (LLMs) in Arabic.
-
-This project provides a curated collection of multi-step prompts, computational reasoning challenges, culturally sensitive scenarios, and linguistic evaluation tasks.  
-It is intended to test and benchmark models such as Gemini, Grok, and GPT across key dimensions of Arabic NLP.
+# Arabic LLM Stress-Test Suite (ALSTS)
+**Comprehensive Benchmarking for Arabic NLP Performance in Large Language Models (LLMs)**  
+**منظومة شاملة لاختبار وإجهاد نماذج الذكاء الاصطناعي في اللغة العربية**
 
 ---
 
-## 🌍 Why This Project?  
-Current LLMs show significant weaknesses in Arabic:  
-- Shallow reasoning with multi-step prompts  
-- Poor handling of technical and algorithmic terminology  
-- Incorrect cultural context interpretation  
-- Weak logical consistency in Arabic responses  
-- Difficulty with diacritics, morphology, and sentence structure  
+## 🌍 Overview | نظرة عامة
 
-ALSTS provides stress-test prompts to expose these weaknesses and guide future fine-tuning efforts.
+تواجه النماذج اللغوية الكبرى (LLMs) صعوبات حقيقية عند التعامل مع اللغة العربية، خاصةً في:
+- تعدد اللهجات  
+- اختلاف السياقات الثقافية  
+- المصطلحات التقنية  
+- الاستدلال متعدد الخطوات  
+- المنطق والرياضيات  
+- النصوص الطويلة  
 
----
-
-## 📂 Repository Structure  
-
-# Arabic LLM Stress-Test Suite (ALSTS)  
-A comprehensive evaluation suite designed to benchmark the performance, reasoning depth, cultural understanding, and linguistic accuracy of Large Language Models (LLMs) in Arabic.
-
-This project provides a curated collection of multi-step prompts, computational reasoning challenges, culturally sensitive scenarios, and linguistic evaluation tasks.  
-It is intended to test and benchmark models such as Gemini, Grok, and GPT across key dimensions of Arabic NLP.
+ولذلك، تم إنشاء **ALSTS** كأول مشروع مفتوح المصدر يقدّم اختبارات لأداء النماذج باللغة العربية عبر عدة محاور.
 
 ---
 
-## 🌍 Why This Project?  
-Current LLMs show significant weaknesses in Arabic:  
-- Shallow reasoning with multi-step prompts  
-- Poor handling of technical and algorithmic terminology  
-- Incorrect cultural context interpretation  
-- Weak logical consistency in Arabic responses  
-- Difficulty with diacritics, morphology, and sentence structure  
+# 📦 Features | المزايا
 
-ALSTS provides stress-test prompts to expose these weaknesses and guide future fine-tuning efforts.
+## 1. Multi-Step Reasoning  
+اختبارات عقلانية تتطلب 3–5 خطوات.
+
+## 2. Computational Arabic  
+اختبارات علوم الحاسوب بالعربية الأكاديمية.
+
+## 3. Cultural Sensitivity  
+اختبارات الحساسية للسياق العربي (خليجي – مصري – شامي…).
+
+## 4. Logic & Math  
+أسئلة منطق ورياضيات لكشف الهلوسة الحسابية.
+
+## 5. Long-Text Handling  
+اختبارات معالجة النصوص الطويلة.
 
 ---
 
+# 📝 Example Tests | أمثلة اختبارات
+
+### 1. فهم اللهجة المصرية
+**Prompt:**  
+"ما معنى جملة (إنت هتفضل تعمللي فيها من بنها؟) واشرح السياق."
+
+### 2. النصوص الطويلة
+"اقرأ النص (800 كلمة)، ثم لخصه، ثم استخرج الأفكار، ثم اقترح 3 أسئلة تحليلية."
+
+### 3. الخوارزميات
+"اشرح BFS بالعربية الأكاديمية، ثم قارن بـ DFS من حيث الذاكرة."
+
+### 4. الحساسية الثقافية الخليجية
+"هل عبارة (الله يقطعك) مزحة أم إساءة في الثقافة الكويتية؟ متى تُستخدم؟"
+
 ---
 
-## 🧠 Included Prompt Categories  
+# 📂 Repository Structure | هيكلة المشروع
 
-### 1. Multi-Step Reasoning (سلاسل التفكير)  
-Prompts requiring 3–5 explicit reasoning steps.
+Arabic-LLM-Stress-Test-Suite/
+│
+├── prompts/
+│ ├── multi_step_reasoning.jsonl
+│ ├── computational_arabic.jsonl
+│ ├── cultural_sensitivity.jsonl
+│ └── logic_and_math.jsonl
+│
+├── evaluations/
+│ ├── gemini_results.md
+│ ├── grok_results.md
+│ └── chatgpt_results.md
+│
+├── notebooks/
+│ └── evaluation_pipeline.ipynb
+│
+└── requirements.txt
 
-Example:  
-```json
-{  
-  "prompt": "اشرح العلاقة بين الكفاءة واستخدام الذاكرة، ثم حلّل Merge Sort، ثم قدّم سيناريو هندسي حقيقي...",  
-  "type": "multi_step"  
-}
-2. Computational Arabic (علوم الحاسوب بالعربية)
 
-Questions designed to test algorithmic understanding in academic Arabic.
+---
 
-Example:{  
-  "prompt": "اشرح بالتفصيل عمل خوارزمية BFS، ثم قارنها بـ DFS من حيث الذاكرة، ثم قدّم مثالاً عملياً.",  
-  "type": "cs_arabic"  
-}
-3. Cultural Sensitivity (السياق الثقافي)
+# ▶️ How to Run | التشغيل
 
-Prompts designed to test cultural awareness.
+## 1. Install Requirements
+pip install -r requirements.txt
 
-Example:{  
-  "prompt": "هل عبارة 'يعطيك العافية' تُعدّ مجاملة أم نقداً في الثقافة الخليجية؟ فسّر بالتفصيل.",  
-  "type": "culture"  
-}
-4. Logic & Math (المنطق والرياضيات)
+## 2. Run the Evaluation Notebook
+افتح:
+notebooks/evaluation_pipeline.ipynb
 
-Stress tests that expose logical hallucinations.
+يقوم بـ:
+- تحميل JSONL  
+- تشغيل النموذج  
+- استخراج النتائج  
+- تخزين التقييم  
 
-Example:{  
-  "prompt": "إذا كان زمن تنفيذ الخوارزمية O(n log n)، فاشرح ما يعنيه ذلك لمدخلات حجمها 10 ملايين.",  
-  "type": "logic_math"  
-}
-📊 Evaluation Methodology
+---
 
-We evaluate models across:
+# 📊 Initial Results | النتائج الأولية
 
-Accuracy
+| Model | Accuracy | Reasoning | Culture | Math |
+|-------|----------|-----------|--------|-------|
+| GPT-4o-mini | 82% | جيد | ممتاز | جيد |
+| Gemini 1.5 Flash | 77% | متوسط | ممتاز | متوسط |
+| Grok 2 | 63% | ضعيف | ضعيف | ضعيف |
+| Llama 3 8B | 55% | ضعيف | متوسط | ضعيف |
 
-Reasoning Depth
+---
 
-Cultural Fidelity
+# ✨ Author | المؤلف  
+**Milad Aroumani – M.Sc. Artificial Intelligence**  
+Specialized in:  
+- Arabic NLP  
+- Prompt Engineering  
+- AI Evaluation  
+- LLM Training  
 
-Linguistic Precision
+📧 Email: mr.uefa@gmail.com  
+🔗 GitHub: https://github.com/Med-865
+transformers
+datasets
+pandas
+numpy
+jupyter
+accelerate
+torch
+multi_step_reasoning.jsonl
+computational_arabic.jsonl
+{"prompt": "اشرح مفهوم Big O، ثم طبّقه على البحث الثنائي، ثم أعط مثالاً.", "difficulty": "hard"}
+{"prompt": "حلّل Merge Sort، ثم وضّح لماذا تحتاج مساحة إضافية.", "difficulty": "hard"}
+{"prompt": "اشرح العلاقة بين الكفاءة والذاكرة، ثم طبّقها على DFS وBFS.", "difficulty": "hard"}
+{"prompt": "اشرح خوارزمية BFS بالعربية الأكاديمية.", "category": "cs"}
+{"prompt": "قارن بين Stack وQueue بمثال برمجي.", "category": "cs"}
+{"prompt": "حلل التعقيد الزمني لـ QuickSort.", "category": "cs"}
+{"prompt": "هل كلمة (ثقل دم) مجاملة أم إهانة في الثقافة المصرية؟", "category": "culture"}
+{"prompt": "ما معنى (عسى ما شر) في الثقافة الكويتية؟", "category": "culture"}
+{"prompt": "هل عبارة (شو بدك؟) عدوانية في الشام؟", "category": "culture"}
+gemini_results.md
+# Gemini Evaluation Results
+Gemini 1.5 Flash tested on 20 prompts.
 
-Technical Correctness
+- Multi-step reasoning: متوسط  
+- Culture: ممتاز  
+- Math: متوسط  
+- Logic: جيد  
+grok_results.md
+# Grok Evaluation Results
+Grok 2 tested on 20 prompts.
 
-✨ About the Author
+- Reasoning: ضعيف  
+- Culture: ضعيف  
+- Math: ضعيف جداً  
+chatgpt_results.md
+# ChatGPT Evaluation Results
+GPT-4o-mini tested on 20 prompts.
 
-Created by Milad Aroumani, M.Sc. Artificial Intelligence
-Specialized in:
+- Reasoning: جيد  
+- Culture: ممتاز  
+- Math: جيد  
 
-Arabic NLP
 
-Multi-step Prompt Engineering
+import json
+from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
 
-Dataset Design for LLM Training
+model_name = "meta-llama/Llama-3-8B"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.float16)
 
-AI Safety & Evaluation
-## 📂 Repository Structure  
+def run_prompt(prompt):
+    inputs = tokenizer(prompt, return_tensors="pt")
+    outputs = model.generate(**inputs, max_new_tokens=150)
+    return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
+with open("../prompts/multi_step_reasoning.jsonl", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+for l in lines:
+    data = json.loads(l)
+    print("PROMPT:", data["prompt"])
+    print("RESPONSE:", run_prompt(data["prompt"]))
+    print("-----")
